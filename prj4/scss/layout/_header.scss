@@ -1,0 +1,39 @@
+.header{
+    padding: 20px 0;
+    // display: flex;
+    // justify-content: center;
+    .header-menu ul{
+        // margin-top: 62px;
+        display: flex;
+        justify-content: flex-end;
+        li{
+            font-size: 16px;
+            font-weight: 600;
+            // line-height: 26px;
+            padding: 0 60px;
+        }
+    }
+    .header-icon{
+        display: flex;
+        justify-content: space-between;
+        // margin-top: 62px;
+        .cart-icon{
+            position: relative;
+            span{
+                position: absolute;
+                background-color: $secondaryColor;
+                width: 20px;
+                border-radius: 50%;
+                top: -10px;;
+                right:-10px;
+                text-align: center;
+                color: white;
+            }
+        }
+    }
+    // .row{
+    //     >[class]
+    // }
+    
+}
+

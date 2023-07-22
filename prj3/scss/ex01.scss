@@ -1,0 +1,83 @@
+$columnNumber:12;
+
+@for $i from 1 through $columnNumber{
+    .col-#{$i}{
+        --column-number: #{$i};
+        padding: 0 $i*2px;
+    }
+}
+
+//Vong lap @each
+
+// .w-100{
+//     width: 100%;
+// }
+// .w-75{
+//     width: 75%;
+// }
+// .w-50{
+//     width: 50%;
+// }
+// .w-25{
+//     width: 25%;
+// }
+// .w-0{
+//     width: 0%;
+// }
+
+$sizes: 0 ,25 ,50, 75, 100;
+
+@each $size in $sizes{
+    @if $size == 0 {
+        .w-0 {
+        width: 0;
+        }
+    }
+    @else{
+    .w-#{$size} {
+        width: $size *1%;
+         }
+    }
+}
+
+.justify-content-start{
+    justify-content: flex-start;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.justify-content-end {
+    justify-content: flex-end;
+}
+.align-items-start{ 
+    align-items: flex-start;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-end {
+    align-items: flex-end;
+}
+
+
+$sizes:(small,20,normal),(medium,40,italic),(large,60,bold);
+$sizes:(small:20,medium:40,large:60);//map: key,value.
+@each $name, $size,$style in $sizes{
+    .col-#{$name}{
+        width: #{$size}px;
+        @if($style != bold){
+            font-size: $style;
+            font-weight: 400;
+        } @else{
+            font-style: bold;
+            font-weight: bold;
+        }
+    }
+}
+
+$align :(start,flex-start ),(center,center),(end,flex-end);
+@each $position,$poFlex in $align{
+    .align-items-#{$position}{
+        align-items: #{$poFlex};
+    }
+}
